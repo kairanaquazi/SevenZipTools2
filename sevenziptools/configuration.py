@@ -1,6 +1,7 @@
 from fman import load_json
 from fman.fs import exists, is_dir
 from fman.url import as_url
+import os
 
 _USER_7ZIP = None
 _SUPPORTED_EXTENSIONS = ['.7z', '.zip']
@@ -8,9 +9,11 @@ _CHECK_EXTENSION = True
 _COMPRESS_ARGS = ['a']
 _HASH = 'sha256'
 
+data_directory = os.path.expanduser("~")
+
 settings = load_json('SevenZipTools.json', default={})
 result = settings.get('7zip', {})
-with open('C:/out.txt', 'w') as myfile:
+with open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), 'w') as myfile:
      myfile.write(str(settings) + '\n')
 if result:
     try:
@@ -45,7 +48,7 @@ if result:
 else:
     _COMPARE_HASH = _HASH
 
-with open('R:/out.txt', 'a') as myfile:
+with open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), 'a') as myfile:
     myfile.write(str(_USER_7ZIP) + '\n')
     myfile.write(str(_SUPPORTED_EXTENSIONS) + '\n')
     myfile.write(str(_CHECK_EXTENSION) + '\n')
