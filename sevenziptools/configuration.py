@@ -13,6 +13,9 @@ data_directory = os.path.expanduser("~")
 
 settings = load_json('SevenZipTools.json', default={})
 result = settings.get('7zip', {})
+
+open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), "a").close()
+
 with open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), 'w') as myfile:
      myfile.write(str(settings) + '\n')
 if result:
