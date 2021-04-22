@@ -1,4 +1,6 @@
 # SevenZipTools
+A fork of [Alphaniner's SevenZipTools](https://github.com/alphaniner/SevenZipTools) that patches a bunch of features.
+
 A plugin for [fman](https://fman.io) that replicates a few of 7-zip's context menu functions.
 
 ## Testing
