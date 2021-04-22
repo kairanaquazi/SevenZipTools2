@@ -10,8 +10,8 @@ _HASH = 'sha256'
 
 settings = load_json('SevenZipTools.json', default={})
 result = settings.get('7zip', {})
-# with open('R:/out.txt', 'w') as myfile:
-#     myfile.write(str(settings) + '\n')
+with open('C:/out.txt', 'w') as myfile:
+     myfile.write(str(settings) + '\n')
 if result:
     try:
         exePath = result['path']
