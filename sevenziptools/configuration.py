@@ -13,9 +13,11 @@ data_directory = os.path.expanduser("~")
 
 settings = load_json('SevenZipTools.json', default={})
 result = settings.get('7zip', {})
-
-os.mkdir(os.path.join(data_directory, "sevenziptools2"))
-os.mkdir(os.path.join(data_directory, "sevenziptools2", "settings"))
+try:
+     os.mkdir(os.path.join(data_directory, "sevenziptools2"))
+     os.mkdir(os.path.join(data_directory, "sevenziptools2", "settings"))
+except FileExistsError:
+     pass
 open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), "a").close()
 
 with open(os.path.join(data_directory, "sevenziptools2", "settings", "settings.txt"), 'w') as myfile:
